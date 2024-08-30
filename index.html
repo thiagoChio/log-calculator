@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Logaritmo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #0000FF, #FFFFFF);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-text {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: black;
+            z-index: 3;
+        }
+
+        .background-text {
+            font-size: 8em;
+            color: rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 300px;
+            position: relative;
+            z-index: 1;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0044ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #567ff1;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-text">FAZ O L</div>
+    <div class="background-text">Faz o L</div>
+    <div class="calculator">
+        <h1>Calculadora de Logaritmo</h1>
+        <input type="text" id="inputNumber" placeholder="Digite um número" />
+        <button onclick="calculateLog()">Calcular Log</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateLog() {
+            const input = document.getElementById('inputNumber').value;
+            const resultElement = document.getElementById('result');
+            
+            if (input === '' || isNaN(input) || input <= 0) {
+                resultElement.innerText = 'Por favor, digite um número positivo.';
+                return;
+            }
+
+            const number = parseFloat(input);
+            const logValue = Math.log10(number);
+
+            resultElement.innerText = `O logaritmo de ${number} é ${logValue.toFixed(4)}.`;
+        }
+    </script>
+</body>
+</html>

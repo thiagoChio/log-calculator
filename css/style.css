@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #0000FF, #FFFFFF); /* Degradê azul para branco */
+    position: relative;
+    overflow: hidden; /* Garante que o texto de fundo não cause rolagem */
+}
+
+.background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8em; /* Ajuste o tamanho conforme necessário */
+    color: rgba(0, 0, 0, 0.1); /* Cor do texto em cinza claro e transparente */
+    white-space: nowrap;
+    z-index: -1; /* Envia o texto para o fundo */
+    text-align: center;
+    width: 100%;
+}
+
+.calculator {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+    position: relative;
+    z-index: 1; /* Garante que a calculadora fique sobre o texto de fundo */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6200ff;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
